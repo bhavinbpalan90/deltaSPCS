@@ -1,4 +1,15 @@
+### This file aws-java-sdk-bundle-1.12.774.jar is not part of the git since the Size of File is 300MB. 
+#### You can directly download and put it in the same path as Dockerfile before building image
+#### https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.12.774
+
+
 docker build . -t sparkspcs
 
 
 docker run -p 8888:8888 -p 4040:4040 --name spark -d sparkspcs
+
+docker ps 
+
+docker commit 8183a16784dd sparkspcs_updated:latest
+
+docker run -p 8888:8888 -p 4040:4040 --name spark -d sparkspcs_updated

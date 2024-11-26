@@ -7,6 +7,14 @@ RUN pip install delta-spark==3.2.1
 RUN pip install deltalake==0.21.0
 RUN pip install jupyterlab
 RUN pip install jupyter
+RUN pip install pandas numpy
+
+COPY ./*.jar $SPARK_HOME/jars/
+
+WORKDIR /bpalan
+
+COPY ./*.ipynb /bpalan/
 
 ENV DELTA_PACKAGE_VERSION=delta-spark_2.12:3.2.0
-CMD jupyter-lab --allow-root --no-browser --ip=0.0.0.0
+#CMD jupyter-lab --allow-root --no-browser --ip=0.0.0.0
+CMD jupyter-lab --allow-root --no-browser --ip=0.0.0.0 --NotebookApp.token='' --NotebookApp.password=''
