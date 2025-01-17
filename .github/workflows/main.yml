@@ -34,7 +34,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/deltaSpark:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/deltaspark:latest
         platforms: linux/amd64,linux/arm64  # Build for both amd64 and arm64
         cache-from: type=gha  # Cache Docker layers from GitHub Actions for faster builds
         cache-to: type=gha,mode=max  # Cache Docker layers for future builds
