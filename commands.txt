@@ -13,3 +13,5 @@ docker ps
 docker commit 8183a16784dd sparkspcs_updated:latest
 
 docker run -p 8888:8888 -p 4040:4040 --name spark -d sparkspcs_updated
+
+docker run -p 8888:8888 -p 4040:4040 --name spark -d bhavinpalan/deltaspark
